@@ -7,6 +7,16 @@
 	<body>
         <div class="container" id="app">
             <H1>Light Vue</H1>
+            <hr>
+            <div class="form-group">
+                <label for="wavelengthInput">Wavelength (nm)</label>
+                <input v-model="wavelength" class="form-control" id="wavelengthInput">
+                <button v-on:click="setColor(700)" class="btn btn-danger">Red</button>
+                <button v-on:click="setColor(520)" class="btn btn-success">Green</button>
+                <button v-on:click="setColor(440)" class="btn btn-primary">Blue</button>
+            </div>
+            <br>
+            <div v-bind:style="{ width: getWidth(), background: getColor(), border: '2px solid black', height: '40px' }"></div>
         </div>
 
         <script src="https://unpkg.com/vue"></script>
